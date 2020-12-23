@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import KeyboardMultiSelect from "./myPlugin/keyboardMultiSelect/KeyboardMultiSelect";
+import KeyboardMultiSelect from "./lib/keyboardMultiSelect/KeyboardMultiSelect";
 export default {
   name: 'app',
   components:{

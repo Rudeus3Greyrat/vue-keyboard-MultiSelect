@@ -5,6 +5,7 @@
   "author": "rudeus_greyrat <3041084465@qq.com>",
   "license": "MIT",
   "private": false,
+  "main": "dist/keyboardMultiSelect.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
