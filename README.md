@@ -13,8 +13,10 @@ See https://www.npmjs.com/package/vue-keyboard-multiselect for more information.
 ## How to Use
 
 ``` bash
-Include your list of elements rendered by your data in <KeyboardMultiSelect></KeyboardMultiSelect>.
-Then you can multi-select these elements using keyboard shortcut.
+import KeyboardMultiSelect from 'vue-keyboard-multiselect'
+Vue.use(KeyboardMultiSelect)
+Then include your list of elements rendered by your data in <KeyboardMultiSelect></KeyboardMultiSelect>.
+Now you can multi-select these elements using keyboard shortcut.
 Hold 'Command' for multi-select one by one. Hold 'Command' with 'Shift' for multi-select a section in your list of elements.
 ```
 
