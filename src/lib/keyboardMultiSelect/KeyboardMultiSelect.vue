@@ -19,14 +19,15 @@ export default {
     return {
       listData: [],
       isShift: false,
-      isCtrl: false
+      isCtrl: false,
+      arr:[]
     }
   },
   watch: {
     listData: {
       handler: function (val) {
         Object.keys(val).forEach(el => {
-          val[el].selected ? this.$slots.default[2 * el].elm.setAttribute('style', 'background-color:blue') : this.$slots.default[2 * el].elm.setAttribute('style', 'background-color:none')
+          val[el].selected ? this.arr[el].elm.setAttribute('style', 'background-color:darkgrey') : this.arr[el].elm.setAttribute('style', 'background-color:none')
         })
         let temp = []
         Object.keys(val).forEach(el => {
@@ -43,7 +44,6 @@ export default {
     this.modifyData();
   },
   mounted() {
-    console.log(this.$slots.default)
     this.addClick()
   },
   methods: {
@@ -53,10 +53,9 @@ export default {
       }
     },
     addClick() {
-      const arr=this.$slots.default.filter(el=>{return el.tag})
-      console.log(arr)
-      for (let i = 0; i < arr.length; i++) {
-        arr[i].elm.addEventListener("click", () => {
+      this.arr=this.$slots.default.filter(el=>{return el.tag})
+      for (let i = 0; i < this.arr.length; i++) {
+        this.arr[i].elm.addEventListener("click", () => {
           this.handleClick(this.listData[i], i)
         })
       }
@@ -134,5 +133,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

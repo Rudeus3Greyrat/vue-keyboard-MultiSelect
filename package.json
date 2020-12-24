@@ -1,7 +1,7 @@
 {
   "name": "vue-keyboard-multiselect",
   "description": " A project for building a keyboard-supported MultiSelect component based on Vue.js.",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "author": "rudeus_greyrat <3041084465@qq.com>",
   "license": "MIT",
   "private": false,

@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <KeyboardMultiSelect :raw-data="[1,2,3,4,5]" @selectChange="handleSelectChange">
-      <div style="width: 10rem;height: 10rem;">0</div>
-      <div style="width: 10rem;height: 10rem;">1</div>
-      <div style="width: 10rem;height: 10rem;">2</div>
-      <div style="width: 10rem;height: 10rem;">3</div>
-      <div style="width: 10rem;height: 10rem;">4</div>
+    <KeyboardMultiSelect :raw-data="rawData">
+      <div v-for="(item,index) in rawData">
+        <span>index</span>
+        <span>{{ item.name }}</span>
+        <ul>
+          <li v-for="(item,index) in item.children">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
     </KeyboardMultiSelect>
   </div>
 </template>
@@ -19,7 +23,8 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      rawData: [{ index: 1, name: 'jack', children: ['a', 'b', 'c'] }, { index: 2, name: 'jack', children: ['a', 'b', 'c'] }, { index: 3, name: 'jack', children: ['a', 'b', 'c'] }, { index: 4, name: 'jack', children: ['a', 'b', 'c'] }, { index: 5, name: 'jack', children: ['a', 'b', 'c'] }, { index: 6, name: 'jack', children: ['a', 'b', 'c'] }]
     }
   },
   methods:{
