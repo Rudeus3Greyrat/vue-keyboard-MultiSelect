@@ -43,6 +43,7 @@ export default {
     this.modifyData();
   },
   mounted() {
+    console.log(this.$slots.default)
     this.addClick()
   },
   methods: {
@@ -52,8 +53,10 @@ export default {
       }
     },
     addClick() {
-      for (let i = 0; 2 * i < this.$slots.default.length; i++) {
-        this.$slots.default[2 * i].elm.addEventListener("click", () => {
+      const arr=this.$slots.default.filter(el=>{return el.tag})
+      console.log(arr)
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].elm.addEventListener("click", () => {
           this.handleClick(this.listData[i], i)
         })
       }

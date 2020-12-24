@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <KeyboardMultiSelect :raw-data="[1,2,3,4,5]" @selectChange="handleSelectChange">
+      <div style="width: 10rem;height: 10rem;">0</div>
       <div style="width: 10rem;height: 10rem;">1</div>
       <div style="width: 10rem;height: 10rem;">2</div>
       <div style="width: 10rem;height: 10rem;">3</div>
       <div style="width: 10rem;height: 10rem;">4</div>
-      <div style="width: 10rem;height: 10rem;">5</div>
     </KeyboardMultiSelect>
   </div>
 </template>
