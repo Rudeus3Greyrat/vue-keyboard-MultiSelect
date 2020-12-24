@@ -97,7 +97,11 @@ export default {
     },
     handleClick(item, index) {
       if (this.isCtrl) {
-        item.selected = true;
+        if(item.selected){
+          item.selected=false;
+        }else{
+          item.selected = true;
+        }
         this.$set(this.listData, index, item);
         if (this.isShift) {
           const len = Object.keys(this.listData).length;
