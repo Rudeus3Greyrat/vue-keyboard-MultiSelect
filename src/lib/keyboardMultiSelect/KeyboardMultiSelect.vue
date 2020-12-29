@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :id="dynamicId">
     <slot></slot>
   </div>
 </template>
@@ -20,14 +20,15 @@ export default {
       listData: [],
       isShift: false,
       isCtrl: false,
-      arr:[]
+      arr:[],
+      dynamicId:''
     }
   },
   watch: {
     listData: {
       handler: function (val) {
         Object.keys(val).forEach(el => {
-          val[el].selected ? this.arr[el].elm.setAttribute('style', 'background-color:darkgrey') : this.arr[el].elm.setAttribute('style', 'background-color:none')
+          val[el].selected ? this.arr[el].setAttribute('style', 'background-color:darkgrey') : this.arr[el].setAttribute('style', 'background-color:none')
         })
         let temp = []
         Object.keys(val).forEach(el => {
@@ -42,6 +43,7 @@ export default {
   created() {
     this.keyEvent();
     this.modifyData();
+    this.dynamicId=String(Math.random())
   },
   mounted() {
     this.addClick()
@@ -53,9 +55,10 @@ export default {
       }
     },
     addClick() {
-      this.arr=this.$slots.default.filter(el=>{return el.tag})
+      const parent=document.getElementById(this.dynamicId)
+      this.arr=[...parent.childNodes]
       for (let i = 0; i < this.arr.length; i++) {
-        this.arr[i].elm.addEventListener("click", () => {
+        this.arr[i].addEventListener("click", () => {
           this.handleClick(this.listData[i], i)
         })
       }

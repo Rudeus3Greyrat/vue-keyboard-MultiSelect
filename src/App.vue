@@ -6,7 +6,7 @@
         <span>{{ item.name }}</span>
         <ul>
           <li v-for="(item,index) in item.children">
-            {{ item }}
+            {{ item }}fg
           </li>
         </ul>
       </div>
